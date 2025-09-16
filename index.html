@@ -12,12 +12,14 @@
 <table id="salahTable">
   <thead>
     <tr>
-      <th>Day</th>
+      <th>Masjid Name</th>
       <th>Fajr</th>
       <th>Dhuhr</th>
       <th>Asr</th>
       <th>Maghrib</th>
       <th>Isha</th>
+	  <th>Jum'aa</th>
+	  <th>Ladies Arrangement</th>
     </tr>
   </thead>
   <tbody>
@@ -27,7 +29,7 @@
     </tbody>
   </table>
 
-  <p>Last updated: Sep 16, 2025</p>
+  <p>Note:- Above are Jamaat timings. Last updated: Sep 16, 2025</p>
 </body>
 <script>
   Papa.parse("timetable.csv", {
@@ -38,7 +40,7 @@
       results.data.forEach(row => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td>${row.Day}</td>
+          <td>${row.Masjid Name}</td>
           <td>${row.Fajr}</td>
           <td>${row.Dhuhr}</td>
           <td>${row.Asr}</td>
