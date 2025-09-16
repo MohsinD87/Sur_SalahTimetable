@@ -51,7 +51,7 @@
           if (!row.Day || Object.values(row).every(val => val.trim() === "")) return;
 
           const tr = document.createElement("tr");
-          tr.innerHTML = `
+          tr.innerHTML = 
             <td>${row.Masjid Name}</td>
             <td>${row.Fajr}</td>
             <td>${row.Dhuhr}</td>
@@ -60,7 +60,7 @@
             <td>${row.Isha}</td>
 			<td>${row.Jum'aa}</td>
 			<td>${row.Ladies Arrangement}</td>
-          `;
+          ;
           tableBody.appendChild(tr);
         });
       }
