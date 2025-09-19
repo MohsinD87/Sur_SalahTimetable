@@ -11,6 +11,11 @@
     th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
     th { background: #2c3e50; color: #fff; }
     tr:nth-child(even) { background: #f9f9f9; }
+	
+	 /* 👇 Special column alignment */
+	td:first-child { text-align: left; font-weight: bold; }  /* Masjid name */
+	td:not(:first-child) { text-align: center; }             /* All prayer times */
+  
   </style>
 </head>
 <body>
@@ -29,9 +34,9 @@
 
       rows.slice(1).forEach(row => {
         html += "<tr>";
-        row.forEach((cell, i) => {
+        row.forEach((cell) => {
         // Example: Highlight Fajr column for Masjid A
-        if (row[0] === "Yes" && rows[0][i] === "Ladies Arrangement") {
+        if (cell.trim() === "Yes") {
           html += `<td style="background: yellow; font-weight: bold;">${cell}</td>`;
         } else {
           html += `<td>${cell}</td>`;
