@@ -29,7 +29,14 @@
 
       rows.slice(1).forEach(row => {
         html += "<tr>";
-        row.forEach(cell => html += `<td>${cell}</td>`);
+        row.forEach((cell, i) => {
+        // Example: Highlight Fajr column for Masjid A
+        if (row[0] === "Yes" && rows[0][i] === "Ladies Arrangement") {
+          html += `<td style="background: yellow; font-weight: bold;">${cell}</td>`;
+        } else {
+          html += `<td>${cell}</td>`;
+        }
+      });
         html += "</tr>";
       });
 
